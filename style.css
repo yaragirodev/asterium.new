@@ -1,10 +1,20 @@
-/* Основные стили в стиле OpenVK */
+/* Основные стили OpenVK */
+:root {
+  --vk-blue: #4680c2;
+  --vk-blue-dark: #3a6baa;
+  --vk-text: #222;
+  --vk-text-light: #656565;
+  --vk-bg: #f0f2f5;
+  --vk-card-bg: #ffffff;
+  --vk-border: #e7e8ec;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background-color: #f0f2f5;
-  color: #222;
+  background-color: var(--vk-bg);
+  color: var(--vk-text);
   line-height: 1.5;
 }
 
@@ -16,8 +26,11 @@ body {
 
 /* Шапка */
 .vk-header {
-  background-color: #4680c2;
+  background-color: var(--vk-blue);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .vk-header__inner {
@@ -34,19 +47,21 @@ body {
   font-weight: 600;
   margin: 0;
   margin-right: 30px;
+  text-decoration: none;
 }
 
 .vk-nav {
   display: flex;
+  gap: 5px;
 }
 
 .vk-nav__item {
   color: white;
   text-decoration: none;
   padding: 8px 15px;
-  margin-right: 5px;
   border-radius: 4px;
   transition: background-color 0.2s;
+  font-size: 15px;
 }
 
 .vk-nav__item:hover {
@@ -68,30 +83,81 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  display: flex;
+  gap: 20px;
 }
 
-.vk-page__main {
-  max-width: 800px;
-  margin: 0 auto;
+.vk-main {
+  flex: 3;
 }
 
-/* Пост */
-.vk-post {
-  background-color: white;
+.vk-sidebar {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* Карточки */
+.vk-card {
+  background-color: var(--vk-card-bg);
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   margin-bottom: 20px;
   overflow: hidden;
 }
 
-.vk-post__content {
+.vk-card__content {
   padding: 20px;
 }
 
-.vk-post__title {
-  margin: 0 0 20px 0;
+.vk-card__title {
+  margin: 0 0 15px 0;
   font-size: 20px;
-  color: #222;
+  color: var(--vk-text);
+}
+
+.vk-meta {
+  color: var(--vk-text-light);
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.vk-text {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* Кнопки */
+.vk-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--vk-blue);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.vk-button:hover {
+  background-color: var(--vk-blue-dark);
+}
+
+/* Фотографии */
+.vk-photo {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  display: block;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.vk-photo-link {
+  display: block;
+  margin-bottom: 15px;
 }
 
 /* Социальные ссылки */
@@ -105,10 +171,10 @@ body {
   display: flex;
   align-items: center;
   padding: 10px 15px;
-  background-color: #f0f2f5;
+  background-color: var(--vk-bg);
   border-radius: 8px;
   text-decoration: none;
-  color: #2a5885;
+  color: var(--vk-blue);
   transition: all 0.2s;
 }
 
@@ -125,8 +191,8 @@ body {
 
 /* Подвал */
 .vk-footer {
-  background-color: white;
-  border-top: 1px solid #e7e8ec;
+  background-color: var(--vk-card-bg);
+  border-top: 1px solid var(--vk-border);
   padding: 15px 0;
 }
 
@@ -135,12 +201,16 @@ body {
   margin: 0 auto;
   padding: 0 20px;
   text-align: center;
-  color: #656565;
+  color: var(--vk-text-light);
   font-size: 14px;
 }
 
 /* Адаптация */
 @media (max-width: 768px) {
+  .vk-page {
+    flex-direction: column;
+  }
+  
   .vk-header__inner {
     flex-direction: column;
     align-items: flex-start;
@@ -158,5 +228,9 @@ body {
   
   .vk-social-links {
     flex-direction: column;
+  }
+  
+  .vk-photo {
+    max-height: 300px;
   }
 }
