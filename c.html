@@ -4,30 +4,53 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>asterium.new</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>asterium.new | Контакты</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head> 
 <body>
-  <header>
-    <h1>asterium.new</h1>
-    <nav>
-      <a href="index.html">Главная</a>
-      <a href="c.html">Контакты</a>
-      <a href="photos.html">Фото</a>
-    </nav>
-  </header>
-  <div class="container">
-    <div class="content">
-      <div class="post">
-        <h2>Привет! Вот мои соц. сети!</h2>
-        <p>YouTube - https://www.youtube.com/@iAmPortalzz</p>
-        <p>GitHub - https://github.com/portalius-dev</p>
-        <p>Discord Сервер - https://discord.gg/wzhf5NSsMG</p>
+  <div class="vk-container">
+    <header class="vk-header">
+      <div class="vk-header__inner">
+        <h1 class="vk-logo">asterium.new</h1>
+        <nav class="vk-nav">
+          <a href="index.html" class="vk-nav__item">Главная</a>
+          <a href="c.html" class="vk-nav__item vk-nav__item--active">Контакты</a>
+          <a href="photos.html" class="vk-nav__item">Фото</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="vk-content">
+      <div class="vk-page">
+        <div class="vk-page__main">
+          <div class="vk-post">
+            <div class="vk-post__content">
+              <h2 class="vk-post__title">Мои социальные сети</h2>
+              <div class="vk-social-links">
+                <a href="https://openvk.example" class="vk-social-link" target="_blank" rel="noopener">
+                  <img src="soc-media/openvk.png" alt="OpenVK" class="vk-social-icon">
+                  <span>OpenVK</span>
+                </a>
+                <a href="https://youtube.example" class="vk-social-link" target="_blank" rel="noopener">
+                  <img src="soc-media/youtube.png" alt="YouTube" class="vk-social-icon">
+                  <span>YouTube</span>
+                </a>
+                <a href="https://telegram.example" class="vk-social-link" target="_blank" rel="noopener">
+                  <img src="soc-media/telegram.png" alt="Telegram" class="vk-social-icon">
+                  <span>Telegram</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <footer class="vk-footer">
+      <div class="vk-footer__inner">
+        <p>&copy; 2025, portalius-dev</p>
+      </div>
+    </footer>
   </div>
-  <footer>
-    &copy; 2025, portalius-dev
-  </footer>
 </body>
 </html>

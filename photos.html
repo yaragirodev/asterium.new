@@ -4,61 +4,277 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>asterium.new</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>asterium.new | Фото</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    /* Стили для вьюера */
+    .vk-photo-viewer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    
+    .vk-photo-viewer--active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    
+    .vk-photo-viewer__content {
+      max-width: 90%;
+      max-height: 90%;
+      position: relative;
+    }
+    
+    .vk-photo-viewer__img {
+      max-width: 100%;
+      max-height: 80vh;
+      display: block;
+      margin-bottom: 15px;
+    }
+    
+    .vk-photo-viewer__controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    
+    .vk-photo-viewer__btn {
+      padding: 8px 15px;
+      background: #4a76a8;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+    
+    .vk-photo-viewer__btn:hover {
+      background: #3a5f8a;
+    }
+    
+    .vk-photo-viewer__close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    
+    .vk-photo-viewer__caption {
+      color: white;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 18px;
+    }
+    
+    @media (max-width: 768px) {
+      .vk-photo-viewer__content {
+        max-width: 95%;
+      }
+      
+      .vk-photo-viewer__close {
+        top: -30px;
+        font-size: 25px;
+      }
+      
+      .vk-photo-viewer__controls {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .vk-photo-viewer__btn {
+        width: 100%;
+        padding: 10px;
+      }
+    }
+  </style>
 </head> 
 <body>
-  <header>
-    <h1>asterium.new</h1>
-    <nav>
-      <a href="index.html">Главная</a>
-      <a href="c.html">Контакты</a>
-      <a href="photos.html">Фото</a>
-    </nav>
-  </header>
-  <div class="container">
-    <div class="content">
-      <div class="post">
-        <h2>Сирень...</h2>
-        <div class="meta">Снято на Redmi 14C</div>
-        <a href="photos/lilac.jpg"><img src="photos/lilac.jpg" class="photopost"></a>
-        <p>Самый красивый и душистый цветок!</p>
+  <!-- Вьюер для фото -->
+  <div class="vk-photo-viewer" id="photoViewer">
+    <div class="vk-photo-viewer__content">
+      <button class="vk-photo-viewer__close" id="closeViewer">&times;</button>
+      <img src="" alt="" class="vk-photo-viewer__img" id="viewerImage">
+      <div class="vk-photo-viewer__controls">
+        <button class="vk-photo-viewer__btn" id="downloadBtn">Скачать фото</button>
       </div>
+      <div class="vk-photo-viewer__caption" id="viewerCaption"></div>
+    </div>
+  </div>
 
-      <div class="post">
-        <h2>Туман - это прекрасное зрелище!</h2>
-        <div class="meta">Снято на Redmi 14C</div>
-        <a href="photos/foggyForest.jpg"><img src="photos/foggyForest.jpg" class="photopost"></a>
-        <p>На это можно смотреть вечно...</p>
+  <div class="vk-container">
+    <header class="vk-header">
+      <div class="vk-header__inner">
+        <a href="index.html" class="vk-logo">asterium.new</a>
+        <nav class="vk-nav">
+          <a href="index.html" class="vk-nav__item">Главная</a>
+          <a href="c.html" class="vk-nav__item">Контакты</a>
+          <a href="photos.html" class="vk-nav__item vk-nav__item--active">Фото</a>
+        </nav>
       </div>
+    </header>
 
-      <div class="post">
-        <h2>Оживленный город</h2>
-        <div class="meta">Снято на Redmi 14C</div>
-        <a href="photos/city.jpg"><img src="photos/city.jpg" class="photopost"></a>
-        <p>Оживленное шоссе - зрелище не менее завораживающее.</p>
-      </div>
+    <div class="vk-content">
+      <div class="vk-page">
+        <main class="vk-main">
+          <article class="vk-card">
+            <div class="vk-card__content">
+              <h2 class="vk-card__title">Сирень...</h2>
+              <div class="vk-meta">Снято на Redmi 14C</div>
+              <a href="photos/lilac.jpg" class="vk-photo-link" data-caption="Сирень - самый красивый и душистый цветок!">
+                <img src="photos/lilac.jpg" alt="Сирень" class="vk-photo">
+              </a>
+              <p class="vk-text">Самый красивый и душистый цветок!</p>
+            </div>
+          </article>
 
-      <div class="post">
-        <h2>Сирень (2)</h2>
-        <div class="meta">Снято на Redmi 14C</div>
-        <a href="photos/lilac2.jpg"><img src="photos/lilac2.jpg" class="photopost"></a>
-        <p>Самый красивый и душистый цветок!</p>
-      </div>
+          <article class="vk-card">
+            <div class="vk-card__content">
+              <h2 class="vk-card__title">Туман - это прекрасное зрелище!</h2>
+              <div class="vk-meta">Снято на Redmi 14C</div>
+              <a href="photos/foggyForest.jpg" class="vk-photo-link" data-caption="Туманный лес - на это можно смотреть вечно...">
+                <img src="photos/foggyForest.jpg" alt="Туманный лес" class="vk-photo">
+              </a>
+              <p class="vk-text">На это можно смотреть вечно...</p>
+            </div>
+          </article>
 
-      <div class="post">
-        <h2>Великие электростолбы на фоне зеленой поляны.</h2>
-        <div class="meta">Снято на Redmi 14C</div>
-        <a href="photos/21.jpg"><img src="photos/21.jpg" class="photopost"></a>
+          <article class="vk-card">
+            <div class="vk-card__content">
+              <h2 class="vk-card__title">Оживленный город</h2>
+              <div class="vk-meta">Снято на Redmi 14C</div>
+              <a href="photos/city.jpg" class="vk-photo-link" data-caption="Оживленное шоссе - зрелище не менее завораживающее.">
+                <img src="photos/city.jpg" alt="Оживленный город" class="vk-photo">
+              </a>
+              <p class="vk-text">Оживленное шоссе - зрелище не менее завораживающее.</p>
+            </div>
+          </article>
+
+          <article class="vk-card">
+            <div class="vk-card__content">
+              <h2 class="vk-card__title">Сирень (2)</h2>
+              <div class="vk-meta">Снято на Redmi 14C</div>
+              <a href="photos/lilac2.jpg" class="vk-photo-link" data-caption="Сирень - самый красивый и душистый цветок!">
+                <img src="photos/lilac2.jpg" alt="Сирень" class="vk-photo">
+              </a>
+              <p class="vk-text">Самый красивый и душистый цветок!</p>
+            </div>
+          </article>
+
+          <article class="vk-card">
+            <div class="vk-card__content">
+              <h2 class="vk-card__title">Великие электростолбы на фоне зеленой поляны.</h2>
+              <div class="vk-meta">Снято на Redmi 14C</div>
+              <a href="photos/21.jpg" class="vk-photo-link" data-caption="Великие электростолбы на фоне зеленой поляны.">
+                <img src="photos/21.jpg" alt="Электростолбы" class="vk-photo">
+              </a>
+            </div>
+          </article>
+          
+          <article class="vk-card">
+  <div class="vk-card__content">
+    <h2 class="vk-card__title">Оживлённая улица в Туле</h2>
+    <div class="vk-meta">Снято на Redmi 14C</div>
+    <a href="photos/tula.jpg" class="vk-photo-link" data-caption="Красивый закат с отражением в воде">
+      <img src="photos/tula.jpg" alt="Закат над озером" class="vk-photo">
+    </a>
+    <p class="vk-text">Тула - прекрасный город!</p>
+  </div>
+</article>
+        </main>
+
+        <aside class="vk-sidebar">
+          <div class="vk-card">
+            <div class="vk-card__content">
+              <h3 class="vk-card__title">Примечание!</h3>
+              <p class="vk-text">Фотографии делаются чисто для души! Они ПОЛНОСТЬЮ бесплатны, можете скачивать их! (Если будете использовать, если не сложно, укажите моё имя пожалуйста).</p>
+            </div>
+          </div>
+        </aside>
       </div>
     </div>
-    <aside class="sidebar">
-      <h3>Примечание!</h3>
-      <p>Фотографии делаются чисто для души! Они ПОЛНОСТЬЮ бесплатны, можете скачивать их! (Если будете использовать, если не сложно, укажите моё имя пожалуйста).</p>
-    </aside>
   </div>
-  <footer>
-    &copy; 2025, portalius-dev
-  </footer>
+
+  <script>
+    // JavaScript для работы вьюера
+    document.addEventListener('DOMContentLoaded', function() {
+      const photoViewer = document.getElementById('photoViewer');
+      const viewerImage = document.getElementById('viewerImage');
+      const viewerCaption = document.getElementById('viewerCaption');
+      const closeViewer = document.getElementById('closeViewer');
+      const downloadBtn = document.getElementById('downloadBtn');
+      const photoLinks = document.querySelectorAll('.vk-photo-link');
+      
+      let currentImageUrl = '';
+      
+      // Открытие вьюера при клике на фото
+      photoLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          currentImageUrl = this.getAttribute('href');
+          const caption = this.getAttribute('data-caption') || '';
+          
+          viewerImage.setAttribute('src', currentImageUrl);
+          viewerCaption.textContent = caption;
+          photoViewer.classList.add('vk-photo-viewer--active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      
+      // Скачивание фото
+      downloadBtn.addEventListener('click', function() {
+        if (!currentImageUrl) return;
+        
+        const link = document.createElement('a');
+        link.href = currentImageUrl;
+        
+        // Извлекаем имя файла из URL
+        const fileName = currentImageUrl.split('/').pop() || 'photo.jpg';
+        link.download = fileName;
+        
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+      
+      // Закрытие вьюера
+      closeViewer.addEventListener('click', function() {
+        photoViewer.classList.remove('vk-photo-viewer--active');
+        document.body.style.overflow = '';
+      });
+      
+      // Закрытие при клике на фон
+      photoViewer.addEventListener('click', function(e) {
+        if (e.target === this) {
+          photoViewer.classList.remove('vk-photo-viewer--active');
+          document.body.style.overflow = '';
+        }
+      });
+      
+      // Закрытие по ESC
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && photoViewer.classList.contains('vk-photo-viewer--active')) {
+          photoViewer.classList.remove('vk-photo-viewer--active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+  </script>
 </body>
 </html>

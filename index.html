@@ -4,36 +4,59 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>asterium.new</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>asterium.new | Главная</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head> 
 <body>
-  <header>
-    <h1>asterium.new</h1>
-    <nav>
-      <a href="#">Главная</a>
-      <a href="c.html">Контакты</a>
-      <a href="photos.html">Фото</a>
-    </nav>
-  </header>
-  <div class="container">
-    <div class="content">
-      <div class="post">
-        <h2>Полная переделка блога!</h2>
-        <div class="meta">22.05.25, 22:46</div>
-        <p>После всех проблем с asterium.blog, я решил перейти на более легкую версию - asterium.new! Это блог "как бы из 2010-х годов" незнаю почему, но сайты (особенно форумы) тех лет выглядят как то уютно.. Если хотите помочь - заходите на GitHub!</p>
-        <a href="https://github.com/portalius-dev/asterium.new" class="button">GitHub</a>
+  <div class="vk-container">
+    <header class="vk-header">
+      <div class="vk-header__inner">
+        <a href="#" class="vk-logo">asterium.new</a>
+        <nav class="vk-nav">
+          <a href="#" class="vk-nav__item vk-nav__item--active">Главная</a>
+          <a href="c.html" class="vk-nav__item">Контакты</a>
+          <a href="photos.html" class="vk-nav__item">Фото</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="vk-content">
+      <div class="vk-page">
+        <main class="vk-main">
+          <article class="vk-card">
+            <div class="vk-card__content">
+              <h2 class="vk-card__title">Полная переделка блога!</h2>
+              <div class="vk-meta">22.05.25, 22:46</div>
+              <p class="vk-text">После всех проблем с asterium.blog, я решил перейти на более легкую версию - asterium.new! Это блог "как бы из 2010-х годов" незнаю почему, но сайты (особенно форумы) тех лет выглядят как то уютно.. Если хотите помочь - заходите на GitHub!</p>
+              <a href="https://github.com/portalius-dev/asterium.new" class="vk-button">GitHub</a>
+            </div>
+          </article>
+          
+          <article class="vk-card">
+            <div class="vk-card__content">
+              <h2 class="vk-card__title">Обновление дизайна!</h2>
+              <div class="vk-meta">01.06.25, 17:16</div>
+              <p class="vk-text">Недавно я зарегестрировался на OpenVK, и мне очень зашел их дизайн в стиле "VK из 2005-го", я вдохновился этим и переделал стиль блога на похожий к OpenVK!</p>
+            </div>
+          </article>
+        </main>
+
+        <aside class="vk-sidebar">
+          <div class="vk-card">
+            <div class="vk-card__content">
+              <h3 class="vk-card__title">Обо мне</h3>
+              <p class="vk-text">Привет! Меня зовут Ярослав, я блогер, программист (еще не совсем), фотограф-любитель.</p>
+            </div>
+          </div>
+        </aside>
       </div>
     </div>
-    <aside class="sidebar">
-      <h3>Обо мне</h3>
-      <p>Привет! Меня зовут Ярослав, я блогер, программист (еще не совсем), фотограф-любитель.</p>
-      <h3>Почему сайт выглядит, как будто из 2010-x?</h3>
-      <p>Не знаю почему, но мне нравится скеоморфизм.. Есть в нём что то такое.. Красивое?</p>
-    </aside>
+
+    <footer class="vk-footer">
+      <div class="vk-footer__inner">
+        <p>&copy; 2025, portalius-dev</p>
+      </div>
+    </footer>
   </div>
-  <footer>
-    &copy; 2025, portalius-dev
-  </footer>
 </body>
 </html>
