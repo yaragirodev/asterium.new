@@ -1,21 +1,25 @@
-/* Основные стили OpenVK */
+/* Web 2.0 Skeuomorphic Styles */
 :root {
-  --vk-blue: #4680c2;
-  --vk-blue-dark: #3a6baa;
-  --vk-text: #222;
-  --vk-text-light: #656565;
-  --vk-bg: #f0f2f5;
-  --vk-card-bg: #ffffff;
-  --vk-border: #e7e8ec;
+  --web2-blue: #4a90e2;
+  --web2-blue-dark: #357abd;
+  --web2-blue-light: #6ba3e8;
+  --web2-text: #333333;
+  --web2-text-light: #666666;
+  --web2-bg: #e8f4fd;
+  --web2-card-bg: #ffffff;
+  --web2-border: #c5d9e8;
+  --web2-shadow: rgba(0, 0, 0, 0.3);
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background-color: var(--vk-bg);
-  color: var(--vk-text);
-  line-height: 1.5;
+  font-family: Tahoma, Arial, sans-serif;
+  background: linear-gradient(135deg, #e8f4fd 0%, #d1e7f8 50%, #b8daf2 100%);
+  background-attachment: fixed;
+  color: var(--web2-text);
+  line-height: 1.4;
+  font-size: 11px;
 }
 
 .vk-container {
@@ -24,10 +28,11 @@ body {
   min-height: 100vh;
 }
 
-/* Шапка */
+/* Header with Web 2.0 styling */
 .vk-header {
-  background-color: var(--vk-blue);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom, #5ba0f2 0%, #4a90e2 50%, #357abd 100%);
+  border-bottom: 2px solid #2968a3;
+  box-shadow: 0 3px 8px var(--web2-shadow);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -36,47 +41,73 @@ body {
 .vk-header__inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 12px 20px;
+  padding: 8px 20px;
   display: flex;
   align-items: center;
 }
 
 .vk-logo {
   color: white;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: bold;
   margin: 0;
   margin-right: 30px;
   text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  padding: 6px 12px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .vk-nav {
   display: flex;
-  gap: 5px;
+  gap: 3px;
 }
 
 .vk-nav__item {
   color: white;
   text-decoration: none;
-  padding: 8px 15px;
-  border-radius: 4px;
-  transition: background-color 0.2s;
-  font-size: 15px;
+  padding: 6px 12px;
+  border-radius: 3px;
+  transition: all 0.2s;
+  font-size: 11px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .vk-nav__item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .vk-nav__item--active {
-  background-color: rgba(255, 255, 255, 0.2);
-  font-weight: 500;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.3) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-/* Основное содержимое */
+/* Content area */
 .vk-content {
   flex: 1;
-  padding: 20px 0;
+  padding: 15px 0;
 }
 
 .vk-page {
@@ -84,7 +115,7 @@ body {
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
-  gap: 20px;
+  gap: 15px;
 }
 
 .vk-main {
@@ -93,107 +124,142 @@ body {
 
 .vk-sidebar {
   flex: 1;
-  min-width: 280px;
+  min-width: 250px;
 }
 
-/* Карточки */
+/* Skeuomorphic Cards */
 .vk-card {
-  background-color: var(--vk-card-bg);
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  margin-bottom: 20px;
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  margin-bottom: 15px;
   overflow: hidden;
+  border: 1px solid #d0d0d0;
+  position: relative;
+}
+
+.vk-card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);
 }
 
 .vk-card__content {
-  padding: 20px;
+  padding: 15px;
+  position: relative;
 }
 
 .vk-card__title {
-  margin: 0 0 15px 0;
-  font-size: 20px;
-  color: var(--vk-text);
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--web2-text);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .vk-meta {
-  color: var(--vk-text-light);
-  font-size: 14px;
-  margin-bottom: 15px;
+  color: var(--web2-text-light);
+  font-size: 10px;
+  margin-bottom: 10px;
+  font-style: italic;
 }
 
 .vk-text {
-  margin-bottom: 15px;
-  line-height: 1.6;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  font-size: 11px;
 }
 
-/* Кнопки */
+/* Web 2.0 Glossy Buttons */
 .vk-button {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: var(--vk-blue);
+  padding: 6px 16px;
+  background: linear-gradient(to bottom, #5ba0f2 0%, #4a90e2 50%, #357abd 100%);
   color: white;
   text-decoration: none;
   border-radius: 4px;
-  font-weight: 500;
-  transition: background-color 0.2s;
-  border: none;
+  font-weight: bold;
+  font-size: 11px;
+  border: 1px solid #2968a3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s;
   cursor: pointer;
-  font-size: 15px;
+  position: relative;
 }
 
 .vk-button:hover {
-  background-color: var(--vk-blue-dark);
+  background: linear-gradient(to bottom, #6ba3e8 0%, #5ba0f2 50%, #4a90e2 100%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-/* Фотографии */
+.vk-button:active {
+  background: linear-gradient(to bottom, #357abd 0%, #4a90e2 50%, #5ba0f2 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+}
+
+/* Photos with Web 2.0 styling */
 .vk-photo {
   width: 100%;
   border-radius: 4px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   display: block;
-  max-height: 500px;
+  max-height: 400px;
   object-fit: cover;
+  border: 3px solid #ffffff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .vk-photo-link {
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
-/* Социальные ссылки */
+/* Social links with Web 2.0 styling */
 .vk-social-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 10px;
 }
 
 .vk-social-link {
   display: flex;
   align-items: center;
-  padding: 10px 15px;
-  background-color: var(--vk-bg);
-  border-radius: 8px;
+  padding: 8px 12px;
+  background: linear-gradient(to bottom, #f8f8f8 0%, #e8e8e8 100%);
+  border-radius: 4px;
   text-decoration: none;
-  color: var(--vk-blue);
+  color: var(--web2-blue);
+  font-size: 11px;
+  font-weight: bold;
+  border: 1px solid #d0d0d0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.8);
   transition: all 0.2s;
 }
 
 .vk-social-link:hover {
-  background-color: #e5e9ed;
-  transform: translateY(-2px);
+  background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
 }
 
 .vk-social-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
 }
 
-/* Подвал */
+/* Footer with Web 2.0 styling */
 .vk-footer {
-  background-color: var(--vk-card-bg);
-  border-top: 1px solid var(--vk-border);
-  padding: 15px 0;
+  background: linear-gradient(to bottom, #f0f0f0 0%, #e0e0e0 100%);
+  border-top: 1px solid #c0c0c0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  padding: 10px 0;
 }
 
 .vk-footer__inner {
@@ -201,36 +267,61 @@ body {
   margin: 0 auto;
   padding: 0 20px;
   text-align: center;
-  color: var(--vk-text-light);
-  font-size: 14px;
+  color: var(--web2-text-light);
+  font-size: 10px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
-/* Адаптация */
+/* Responsive design */
 @media (max-width: 768px) {
   .vk-page {
     flex-direction: column;
   }
-  
+
   .vk-header__inner {
     flex-direction: column;
     align-items: flex-start;
+    padding: 6px 15px;
   }
-  
+
   .vk-logo {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    font-size: 16px;
   }
-  
+
   .vk-nav {
     width: 100%;
     overflow-x: auto;
-    padding-bottom: 5px;
+    padding-bottom: 3px;
   }
-  
+
   .vk-social-links {
     flex-direction: column;
   }
-  
+
   .vk-photo {
-    max-height: 300px;
+    max-height: 250px;
   }
+
+  .vk-card__content {
+    padding: 12px;
+  }
+}
+
+/* Additional Web 2.0 effects */
+.vk-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Glossy highlight effect */
+.vk-button:before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
+  border-radius: 3px 3px 0 0;
+  pointer-events: none;
 }
